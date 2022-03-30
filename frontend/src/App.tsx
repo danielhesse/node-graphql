@@ -7,7 +7,7 @@ type User = {
   name: string;
 }
 
-const getUsers = gql`
+export const GET_USERS = gql`
   query {
     users {
       id
@@ -17,7 +17,7 @@ const getUsers = gql`
 `;
 
 function App() {
-  const { data, loading } = useQuery<{ users: User[] }>(getUsers);
+  const { data, loading } = useQuery<{ users: User[] }>(GET_USERS);
 
   if (loading) {
     return <p>Loading...</p>
